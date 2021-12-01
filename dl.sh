@@ -1,8 +1,9 @@
 #!/bin/bash
 
+
 echo "Enter Video URL"
 read url
-echo "Chose your option d = default - h = highest - db = default best- a = audio - pl = playlist"
+echo "Chose your option d = default - h = highest - db = default best - v4 = 480p - a = audio - pl = playlist"
 read evaluator
 
 
@@ -26,6 +27,9 @@ then
 elif [ $evaluator == "a" ]
 then
 	yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 --embed-thumbnail $url
+elif [ $evaluator == "v4" ]
+then
+	yt-dlp -f 'bestvideo[height<=480]+bestaudio/best[height<=480]' --merge-output-format mp4 $url
 else
 	echo "None of the condition met"
 fi
