@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-echo "Enter Video URL"
+echo 'Enter Video URL or "--batch-file links.txt"'
 read url
 echo "Chose your option d = default - h = highest - db = default best - v4 = 480p - a = audio - pl = playlist"
 read evaluator
